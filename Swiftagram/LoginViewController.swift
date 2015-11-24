@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  ViewController.swift
 //  Swiftagram
 //
 //  Created by Rachel Stevenson on 11/23/15.
@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class LoginViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +26,33 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func loginTapped(sender: AnyObject) {
+        
+        let username = usernameField.text
+        let password = passwordField.text
+        
+        PFUser.logInWithUsernameInBackground(username!, password: password!) {
+            (user: PFUser?, error: NSError?) -> Void in
+            
+            if error == nil {
+                //Successfully logged in.
+                
+                print("Successfully logged in.")
+                
+        } else {
+            //Error while logging in.
+            
+            
+            var alertController = UIAlertController(title: "Error", message: "Error. Incorrect username/password", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+                
+            self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        
+        }
+
+    
+    }
 
 }
 
