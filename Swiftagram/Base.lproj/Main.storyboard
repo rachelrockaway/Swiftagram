@@ -68,15 +68,29 @@
         <!--Posts Table View Controller-->
         <scene sceneID="vQ1-cE-5f2">
             <objects>
-                <tableViewController id="kRF-OQ-9SW" customClass="PostsTableViewController" customModule="Swiftagram" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="postsController" id="kRF-OQ-9SW" customClass="PostsTableViewController" customModule="Swiftagram" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="389" sectionHeaderHeight="28" sectionFooterHeight="28" id="y3A-xV-O7W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="Z24-q7-50g">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <items>
+                                <navigationItem title="Posts" id="kSC-gh-BWE">
+                                    <barButtonItem key="rightBarButtonItem" title="Compose" id="Enj-LR-GKB">
+                                        <connections>
+                                            <segue destination="uR8-q8-pEe" kind="show" id="7Xz-eP-HF0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="389" id="mq6-6h-Pbh" customClass="PostTableViewCell" customModule="Swiftagram" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="389"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="389"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mq6-6h-Pbh" id="ltk-my-6ex">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="388"/>
@@ -117,7 +131,7 @@
         <!--Compose View Controller-->
         <scene sceneID="XjE-Zx-ECW">
             <objects>
-                <viewController id="uR8-q8-pEe" customClass="ComposeViewController" customModule="Swiftagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="composeController" id="uR8-q8-pEe" customClass="ComposeViewController" customModule="Swiftagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rw3-FD-6Mf"/>
                         <viewControllerLayoutGuide type="bottom" id="lem-Ue-DYD"/>

@@ -11,7 +11,7 @@ import Parse
 import ParseUI
 import Bolts
 
-class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var previewImage: UIImageView!
@@ -19,6 +19,8 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        captionTextView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -50,6 +52,12 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
+    func textViewShouldEndEditing(textView:UITextView) -> Bool {
+        captionTextView.resignFirstResponder()
+        return true;
+    }
+    
+    
     @IBAction func composeTapped(sender: AnyObject) {
         
         let date = NSDate()
@@ -72,9 +80,13 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         do {
             try photoToUpload.save()
+            
+            print("Successfully posted.")
+            
         }catch {
             print("Error.")
         
+
     }
     
 }

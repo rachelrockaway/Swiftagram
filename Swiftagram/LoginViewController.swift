@@ -39,6 +39,9 @@ class LoginViewController: UIViewController {
                 
                 print("Successfully logged in.")
                 
+                let vc: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("postsController")
+                self.presentViewController(vc as! UIViewController, animated: true, completion: nil)
+                
         } else {
             //Error while logging in.
             
