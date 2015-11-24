@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		497D05431C044649000319A8 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D05421C044649000319A8 /* PostsTableViewController.swift */; };
+		497D05451C044678000319A8 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D05441C044678000319A8 /* PostTableViewCell.swift */; };
 		499D5BE91C0424F900307607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D5BE81C0424F900307607 /* AppDelegate.swift */; };
 		499D5BEB1C0424F900307607 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D5BEA1C0424F900307607 /* LoginViewController.swift */; };
 		499D5BEE1C0424FA00307607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499D5BEC1C0424FA00307607 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		497D05421C044649000319A8 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		497D05441C044678000319A8 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		499D5BE51C0424F900307607 /* Swiftagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499D5BE81C0424F900307607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499D5BEA1C0424F900307607 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				499D5BE81C0424F900307607 /* AppDelegate.swift */,
 				499D5BEA1C0424F900307607 /* LoginViewController.swift */,
 				499D5BEC1C0424FA00307607 /* Main.storyboard */,
+				497D05441C044678000319A8 /* PostTableViewCell.swift */,
+				497D05421C044649000319A8 /* PostsTableViewController.swift */,
 				499D5BEF1C0424FA00307607 /* Assets.xcassets */,
 				499D5BF11C0424FA00307607 /* LaunchScreen.storyboard */,
 				499D5BF41C0424FA00307607 /* Info.plist */,
@@ -325,7 +331,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				499D5BEB1C0424F900307607 /* LoginViewController.swift in Sources */,
+				497D05431C044649000319A8 /* PostsTableViewController.swift in Sources */,
 				499D5BE91C0424F900307607 /* AppDelegate.swift in Sources */,
+				497D05451C044678000319A8 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +566,7 @@
 				499D5C0F1C0424FA00307607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		499D5C101C0424FA00307607 /* Build configuration list for PBXNativeTarget "SwiftagramTests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +575,7 @@
 				499D5C121C0424FA00307607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		499D5C131C0424FA00307607 /* Build configuration list for PBXNativeTarget "SwiftagramUITests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +584,7 @@
 				499D5C151C0424FA00307607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
