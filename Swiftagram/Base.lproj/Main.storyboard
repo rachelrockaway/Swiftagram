@@ -114,5 +114,65 @@
             </objects>
             <point key="canvasLocation" x="782" y="357"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="XjE-Zx-ECW">
+            <objects>
+                <viewController id="uR8-q8-pEe" customClass="ComposeViewController" customModule="Swiftagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rw3-FD-6Mf"/>
+                        <viewControllerLayoutGuide type="bottom" id="lem-Ue-DYD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PPa-jO-zSt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-xN-1ff">
+                                <rect key="frame" x="51" y="63" width="218" height="107"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.44941546762589929" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdK-U0-A5H">
+                                <rect key="frame" x="122" y="28" width="77" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qi7-Ob-YBE">
+                                <rect key="frame" x="0.0" y="248" width="320" height="320"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucR-rM-7vq">
+                                <rect key="frame" x="118" y="393" width="85" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Add image"/>
+                                <connections>
+                                    <action selector="addImageTapped:" destination="uR8-q8-pEe" eventType="touchUpInside" id="rrq-Aa-KyM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0O-Cl-AT1">
+                                <rect key="frame" x="122" y="190" width="77" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Compose"/>
+                                <connections>
+                                    <action selector="composeTapped:" destination="uR8-q8-pEe" eventType="touchUpInside" id="N3c-z5-nct"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="captionTextView" destination="fBq-xN-1ff" id="KGb-9k-EBo"/>
+                        <outlet property="previewImage" destination="qi7-Ob-YBE" id="cmH-KL-QcL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3b-eg-Wgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="357"/>
+        </scene>
     </scenes>
 </document>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		497D05431C044649000319A8 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D05421C044649000319A8 /* PostsTableViewController.swift */; };
 		497D05451C044678000319A8 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D05441C044678000319A8 /* PostTableViewCell.swift */; };
+		497D05471C044BA8000319A8 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497D05461C044BA8000319A8 /* ComposeViewController.swift */; };
 		499D5BE91C0424F900307607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D5BE81C0424F900307607 /* AppDelegate.swift */; };
 		499D5BEB1C0424F900307607 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D5BEA1C0424F900307607 /* LoginViewController.swift */; };
 		499D5BEE1C0424FA00307607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499D5BEC1C0424FA00307607 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		497D05421C044649000319A8 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		497D05441C044678000319A8 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		497D05461C044BA8000319A8 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		499D5BE51C0424F900307607 /* Swiftagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499D5BE81C0424F900307607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		499D5BEA1C0424F900307607 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				499D5BE81C0424F900307607 /* AppDelegate.swift */,
 				499D5BEA1C0424F900307607 /* LoginViewController.swift */,
 				499D5BEC1C0424FA00307607 /* Main.storyboard */,
+				497D05461C044BA8000319A8 /* ComposeViewController.swift */,
 				497D05441C044678000319A8 /* PostTableViewCell.swift */,
 				497D05421C044649000319A8 /* PostsTableViewController.swift */,
 				499D5BEF1C0424FA00307607 /* Assets.xcassets */,
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497D05471C044BA8000319A8 /* ComposeViewController.swift in Sources */,
 				499D5BEB1C0424F900307607 /* LoginViewController.swift in Sources */,
 				497D05431C044649000319A8 /* PostsTableViewController.swift in Sources */,
 				499D5BE91C0424F900307607 /* AppDelegate.swift in Sources */,
@@ -478,6 +482,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Swiftagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rachelrockaway.Swiftagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -493,6 +498,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Swiftagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rachelrockaway.Swiftagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
