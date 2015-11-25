@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
             //Error while logging in.
             
             
-            var alertController = UIAlertController(title: "Error", message: "Error. Incorrect username/password", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "Error", message: "Error. Incorrect username/password", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
                 
             self.presentViewController(alertController, animated: true, completion: nil)

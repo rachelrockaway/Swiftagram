@@ -44,7 +44,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
         self.previewImage.image = image
         
@@ -52,7 +52,7 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
-    func textViewShouldEndEditing(textView:UITextView) -> Bool {
+    func textViewShouldEndEditing(textView: UITextView) -> Bool {
         captionTextView.resignFirstResponder()
         return true;
     }
@@ -82,6 +82,11 @@ class ComposeViewController: UIViewController, UIImagePickerControllerDelegate, 
             try photoToUpload.save()
             
             print("Successfully posted.")
+            
+            let vc: AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier("postsController")
+            
+            self.presentViewController(vc as! UIViewController, animated: true, completion: nil)
+            
             
         }catch {
             print("Error.")

@@ -6,48 +6,127 @@
 //  Copyright © 2015 rachelrockaway. All rights reserved.
 //
 
+
+//images[0] = first post's image
+//imageCaptions[0] = first post's caption
+//iamgeDates[0] = first post's date
+//imageUsers[0] = first post's addedBy
+
 import UIKit
 import Parse
+import ParseUI
 import Bolts
 
 class PostsTableViewController: UITableViewController {
+    
+    var images = [PFFile]()
+    var imageCaptions = [String]()
+    var imageDates = [String]()
+    var imageUsers = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector("refreshPulled"), forControlEvents: UIControlEvents.ValueChanged)
+    
+        loadData()
+        self.tableView.reloadData()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func refreshPulled() {
+        
+        loadData()
+        self.tableView.reloadData()
+        
+        refreshControl?.endRefreshing()
+        
+    }
+    
+    func loadData() {
+        
+        let query = PFQuery(className: "Posts")
+        query.orderByDescending("createdAt")
+        query.findObjectsInBackgroundWithBlock {
+            (posts: [PFObject]?, error: NSError?) -> Void in
+            
+            if (error == nil) {
+                //No error
+                
+                if let posts = posts as [PFObject]! {
+                    for post in posts {
+                        
+                        self.images.append(post["Image"] as! PFFile)
+                        self.imageCaptions.append(post["Caption"] as! String)
+                        self.imageDates.append(post["date"] as! String)
+                        self.imageUsers.append(post["addedBy"] as! String)
+                    }
+                    
+                    self.tableView.reloadData()
+                    
+                }
+                
+            } else {
+                
+                //Error
+            }
+        }
+    }
+    
+    @IBAction func commentTapped(sender: AnyObject) {
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return images.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as! PostTableViewCell
-
         // Configure the cell...
+        
+        let imageToLoad = self.images[indexPath.row] as PFFile
+        let imageCaption = self.imageCaptions[indexPath.row] as String
+        let imageDate = self.imageDates[indexPath.row] as String
+        let imageUser = self.imageUsers[indexPath.row] as String
+        
+        do {
+            let imageData = try imageToLoad.getData()
+            let finalizedImage = UIImage(data: imageData)
+            
+            cell.postImageView.image = finalizedImage
+            cell.postCaption.text = imageCaption
+            cell.addedBy.text = imageUser
+            cell.dateLabel.text = imageDate
 
-        return cell
+
+        }catch {
+            print("Error.")
+            
+            
+        }
+        
+                return cell
     }
 
+    
 
     /*
     // Override to support conditional editing of the table view.

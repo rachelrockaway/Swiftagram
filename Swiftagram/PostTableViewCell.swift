@@ -16,7 +16,9 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView: PFImageView!
     @IBOutlet weak var postCaption: UILabel!
-
+    @IBOutlet weak var addedBy: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
